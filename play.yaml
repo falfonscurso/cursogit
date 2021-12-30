@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: instalar devecot
+      dnf:
+        name: tree
+        state: latest
+        
+    - name: Subir servicio de apache
+      systemd:
+       name: httpd
+       state: restarted
+...
